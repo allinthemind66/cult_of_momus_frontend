@@ -9,12 +9,32 @@
     <link rel="stylesheet" type="text/css" href="./index.css">
   </head>
   <body>
-    <nav class="navbar navbar-light" style="background-color: darkGreen">
-        <span class="navbar-brand mb-0 h1"><h1>Cult Of Momus</h1></span>
+
+    <nav class="navbar navbar-light">
+        <span class="navbar-brand"><h1 class='title'>Cult Of Momus</h1></span>
+        <div class="ui five item menu" >
+          <a class="item active sitenav">Home</a>
+          <a class="item  sitenav">Movies</a>
+          <a class="item  sitenav">Reviews</a>
+          <a class="item  sitenav">About</a>
+          <a class="item  sitenav">Contact</a>
+        </div>
+
       </nav>
-    <h1>Welcome to Cult Of Momus<h1>
+      <div class='grid-wrapper'>
+      <div class='one'>
+        <h1>Welcome to Cult Of Momus<h1>
+      </div>
+
+      <div class=" two news-landing">
+        <h2>News:</h2>
+        <p>Lorem ipsum dolor sit amet, maiores ornare ac fermentum, <br>
+          imperdiet ut vivamus a, nam lectus at nunc.Quam euismod <br>
+          sem, semper ut potenti pellentesque quisque.
+        </p>
+      </div>
       <!-- ############# FORM FOR A MOVIE -->
-      <div class="form">
+      <!-- <div class="form">
         <form id="movie-form">
           Movie Title:<br>
           <input type="text" name="title">
@@ -31,15 +51,11 @@
           <br>
           <input type="submit" name="submit">
         </form>
-      </div>
+      </div> -->
 
       <!-- ############ MOVIE POSTERS!!! -->
-      <div>
-        <br>
-        <img src="http://img.moviepostershop.com/howard-the-duck-movie-poster-1986-1020265447.jpg">
-        <br>
-        <img src="https://i.pinimg.com/originals/f8/92/73/f89273c4f65164f24646f35125a7e2e6.jpg">
-      </div>
+
+    </div>
         <script src="./index.js"></script>
   </body>
 </html>
