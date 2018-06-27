@@ -1,20 +1,39 @@
 document.addEventListener("DOMContentLoaded", function(){
   let moviesList = document.getElementById("moviesList");
 
-  fetch('http://localhost:3000/api/v1/movies/')
-  .then(resp => resp.json())
-  .then(json => renderMoviesHTML(json))
+
+  async function getMovieData(){
+    try {
+      const response = await fetch('http://localhost:3000/api/v1/movies/');
+      if(response.ok){
+        const jsonResponse = await response.json();
+        renderMoviesHTML(jsonResponse);
+      };
+    }
+    catch(error){
+      console.log(error)
+    };
+  };
 
   const renderMoviesToPage = (html) => {
     moviesList.innerHTML = html;
+    let allMoviesOnPage = document.getElementsByClassName("movie");
+    for(let movie of allMoviesOnPage){
+      movie.addEventListener('click', () => {
+          console.log('hi');
+        });
+    };
   };
 
   const renderMoviesHTML = (json) => {
-    let htmlBlock = ''
+    let htmlBlock = '';
     json.forEach(movie => {
-      htmlBlock += `<a><li>${movie.title}</li></a>`
+      htmlBlock += `<a id='movie-${movie.id}' class='movie'><li>${movie.title} - ${movie.release_year}</li></a>`
     });
-    renderMoviesToPage(htmlBlock)
+    renderMoviesToPage(htmlBlock);
   };
+  getMovieData();
+
+
 
 })

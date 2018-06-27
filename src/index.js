@@ -30,12 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   movieForm.addEventListener('submit', handleFormSubmit)
 
-
-
-
-
-
-
-
-
 })
