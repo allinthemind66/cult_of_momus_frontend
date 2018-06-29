@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
   let moviesList = document.getElementById("moviesList");
-
-
+  let movieId = null;
+  
   async function getMovieData(){
     try {
       const response = await fetch('http://localhost:3000/api/v1/movies/');
@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function(){
     let allMoviesOnPage = document.getElementsByClassName("movie");
     for(let movie of allMoviesOnPage){
       movie.addEventListener('click', () => {
-      history.pushState(null,null, `#/moviespage/${movie.id.split('-')[1]}`)
+      movieId = movie.id.split("-")[1]
+      console.log(movieId)
         });
     };
   };
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const renderMoviesHTML = (json) => {
     let htmlBlock = '';
     json.forEach(movie => {
-      htmlBlock += `<a id='movie-${movie.id}' class='movie'><li>${movie.title} - ${movie.release_year}</li></a>`
+      htmlBlock += `<a href='./moviepage.html' id='movie-${movie.id}' class='movie'><li>${movie.title} - ${movie.release_year}</li></a>`
     });
     renderMoviesToPage(htmlBlock);
   };
