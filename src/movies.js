@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let allMoviesOnPage = document.getElementsByClassName("movie");
     for(let movie of allMoviesOnPage){
       movie.addEventListener('click', () => {
-          console.log('hi');
+      history.pushState(null,null, `#/moviespage/${movie.id.split('-')[1]}`)
         });
     };
   };
