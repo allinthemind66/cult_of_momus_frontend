@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
   let moviesList = document.getElementById("moviesList");
   let movieId = null;
-  
+
   async function getMovieData(){
     try {
       const response = await fetch('http://localhost:3000/api/v1/movies/');
@@ -34,7 +34,4 @@ document.addEventListener("DOMContentLoaded", function(){
     renderMoviesToPage(htmlBlock);
   };
   getMovieData();
-
-
-
 })
