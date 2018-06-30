@@ -22,14 +22,28 @@ document.addEventListener("DOMContentLoaded", function(){
       movie.addEventListener('click', () => {
       movieId = movie.id.split("-")[1]
       console.log(movieId)
+      getIndividualMovieData();
         });
     };
+  };
+
+  async function getIndividualMovieData(){
+    try {
+      const response = await fetch('http://localhost:3000/api/v1/movies/' + movieId);
+      if(response.ok){
+        const jsonResponse = await response.json();
+        console.log(jsonResponse);
+      };
+    }
+    catch(error){
+      console.log(error);
+    }
   };
 
   const renderMoviesHTML = (json) => {
     let htmlBlock = '';
     json.forEach(movie => {
-      htmlBlock += `<a href='./moviepage.html' id='movie-${movie.id}' class='movie'><li>${movie.title} - ${movie.release_year}</li></a>`
+      htmlBlock += `<a id='movie-${movie.id}' class='movie'><li>${movie.title} - ${movie.release_year}</li></a>`
     });
     renderMoviesToPage(htmlBlock);
   };
