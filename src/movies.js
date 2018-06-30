@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
   let moviesList = document.getElementById("moviesList");
+  let movieInfo = document.getElementById("movieInfo");
   let movieId = null;
 
   async function getMovieData(){
@@ -33,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function(){
       if(response.ok){
         const jsonResponse = await response.json();
         console.log(jsonResponse);
+        let movieClass = new Movie(jsonResponse.title)
+        console.log(movieClass.render());
+        movieInfo.innerHTML = movieClass.render();
       };
     }
     catch(error){

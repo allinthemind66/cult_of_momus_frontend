@@ -4,7 +4,11 @@ class Movie {
   }
   render(){
     return(`
-      <div>Im a Movie class</div>
+      <div>
+        <p>The name of the movie is: ${this.name}</p>
+        <p>The Director is: </p>
+        <p>The year this movie was released was: </p>
+      </div>
     `)
   }
 }
