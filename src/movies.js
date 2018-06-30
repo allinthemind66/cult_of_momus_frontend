@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
       if(response.ok){
         const jsonResponse = await response.json();
         console.log(jsonResponse);
-        let movieClass = new Movie(jsonResponse.title)
+        let movieClass = new Movie(jsonResponse.title, jsonResponse.director, jsonResponse.release_year, jsonResponse.rtscore);
         console.log(movieClass.render());
         movieInfo.innerHTML = movieClass.render();
       };
