@@ -56,3 +56,12 @@ ul {
   margin:  0;
 
 }
+
+#movieInfoWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#movieInfo {
+  grid-column: 2/3;
+}
