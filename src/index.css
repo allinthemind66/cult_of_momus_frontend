@@ -57,11 +57,11 @@ ul {
 
 }
 
-#movieInfoWrapper {
+/* #movieInfoWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
+} */
 
-#movieInfo {
+/* #movieInfo {
   grid-column: 2/3;
-}
+} */

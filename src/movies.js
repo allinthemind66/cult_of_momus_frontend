@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
   let moviesList = document.getElementById("moviesList");
-  let movieInfo = document.getElementById("movieInfo");
+  let movieInfoDiv = document.getElementById("movieInfo");
   let movieId = null;
 
   async function getMovieData(){
@@ -35,8 +35,9 @@ document.addEventListener("DOMContentLoaded", function(){
         const jsonResponse = await response.json();
         console.log(jsonResponse);
         let movieClass = new Movie(jsonResponse.title, jsonResponse.director, jsonResponse.release_year, jsonResponse.rtscore);
-        console.log(movieClass.render());
-        movieInfo.innerHTML = movieClass.render();
+        let movieInfo = new MovieInfo();
+        console.log(movieClass.render(movieInfo.render()));
+        movieInfoDiv.innerHTML = movieClass.render(movieInfo.render());
       };
     }
     catch(error){

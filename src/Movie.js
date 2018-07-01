@@ -5,13 +5,16 @@ class Movie {
     this.releaseDate = releaseDate
     this.rottenScore = rottenScore
   }
-  render(){
+  render(movieInfo){
     return(`
       <div>
         <h1>${this.name}</h1>
         <p>Directed by ${this.director} </p>
         <p>Release Year: ${this.releaseDate}</p>
         <p>Rotten Tomatoes Score: ${this.rottenScore}%</p>
+        <div>
+          ${movieInfo}
+        </div>
       </div>
     `)
   }
