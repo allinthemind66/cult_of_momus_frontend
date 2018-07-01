@@ -8,10 +8,10 @@ class Movie {
   render(){
     return(`
       <div>
-        <p>The name of the movie is: ${this.name}</p>
-        <p>The Director is: ${this.director} </p>
-        <p>The year this movie was released was: ${this.releaseDate}</p>
-        <p>Rotten Tomato's Rating: ${this.rottenScore}</p>
+        <h1>${this.name}</h1>
+        <p>Directed by ${this.director} </p>
+        <p>Release Year: ${this.releaseDate}</p>
+        <p>Rotten Tomatoes Score: ${this.rottenScore}%</p>
       </div>
     `)
   }
