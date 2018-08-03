@@ -3,10 +3,21 @@ document.addEventListener("DOMContentLoaded", function(){
   let moviesList = document.getElementById("moviesList");
   let movieInfoDiv = document.getElementById("movieInfo");
   let movieId = null;
+  let movieLoaded = false;
 
   const movieClick = (pathName) => {
     history.pushState({}, `#${pathName}`, `#${pathName}`);
   };
+  window.onpopstate = () => {
+  // contentDiv.innerHTML =
+  // movieLoaded ? console.log('movie loaded is ', true) : console.log('movie loaded is ', false)
+  if(movieLoaded){
+    location.reload(true)
+  } else{
+    //get id from location name and run whole process again.
+    console.log('hey')
+  }
+}
 
   async function getMovieData(){
     try {
@@ -21,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function(){
     };
   };
 
+
+
   const renderMoviesToPage = (html) => {
     moviesList.innerHTML = html;
     let allMoviesOnPage = document.getElementsByClassName("movie");
@@ -29,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function(){
       movieId = movie.id.split("-")[1]
       console.log(movieId)
       getIndividualMovieData();
+      movieLoaded = true
       movieClick(`movies/${movieId}`)
 
         });

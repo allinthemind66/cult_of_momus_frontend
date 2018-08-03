@@ -9,7 +9,7 @@ class Movie {
     return(`
       <div>
         <h1>${this.name}</h1>
-        <a href='/src/movies.html'>Back To Movies</a>
+        <a class='ui button primary' href='/src/movies.html'>Back To Movies</a>
         <p>Directed by ${this.director} </p>
         <p>Release Year: ${this.releaseDate}</p>
         <p>Rotten Tomatoes Score: ${this.rottenScore}%</p>
