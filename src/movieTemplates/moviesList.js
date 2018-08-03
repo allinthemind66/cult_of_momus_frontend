@@ -1,1 +1,0 @@
-let moviesList = `I am all the movies <br><a onClick="onButtonClick('/src/moviePage')">Take me somewhere good!</a></br><a onClick="onButtonClick('/moviePage')">Take me somewhere else that is good!</a>`
